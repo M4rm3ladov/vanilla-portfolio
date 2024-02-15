@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="normalize.css">
+    <link rel="stylesheet/less" href="style.less">
+    <link rel="stylesheet/less" href="media_queries.less">
+    <title>My Portfolio</title>
+</head>
+<body>
+    <div class="container">
+        <nav id="desktop-nav">
+            <div class="logo">
+                <img src="assets/logo2.svg" alt="My Logo"/>
+                Renier Antonio
+            </div>
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#technologies">Technology</a></li>
+                <li><a href="#contacts">Contact</a></li>
+            </ul>
+        </nav>
+    
+        <nav id="hamburger-nav">
+            <div class="logo">
+                <img src="assets/logo2.svg" alt="My Logo"/>
+                Renier Antonio
+            </div>
+            <div class="hamburger-menu">
+                <div class="hamburger-icon" onclick="toggleMenu()">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <div class="menu-links">
+                    <li><a href="#about" onclick="toggleMenu()">About</a></li>
+                    <li><a href="#projects" onclick="toggleMenu()">Projects</a></li>
+                    <li><a href="#technologies" onclick="toggleMenu()">Technology</a></li>
+                    <li><a href="#contacts" onclick="toggleMenu()">Contact</a></li>
+                </div>
+            </div>
+        </nav>
+
+        <header>
+    
+        </header>
+       
+    </div>
+
+    <script src="script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/less.js/4.1.3/less.js"></script>
+</body>
+</html>
