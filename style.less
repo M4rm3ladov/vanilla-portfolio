@@ -221,10 +221,22 @@ html {
                             align-self: start;
                         }
 
-                        & .arrow{
-                            position: absolute;
-                            right: -5rem;
-                            bottom: 2.5rem;
+                    }
+
+                    &#technology {
+                        position: relative;
+
+                        .section-tech-container {
+                            display: grid;
+                            grid-template-columns: repeat(6, 1fr);
+                            gap: 4rem;
+                            margin-top: 2.5rem;
+ 
+                            img {
+                                justify-self: center;
+                                cursor: pointer;
+                                height: 3rem;    
+                            }
                         }
                     }
 
@@ -234,6 +246,12 @@ html {
                         margin: auto 0;
                         border: 2px solid @complementary-color-dark;
                         border-radius: 50%;
+                    }
+
+                    .arrow{
+                        position: absolute;
+                        right: -5rem;
+                        bottom: 2.5rem;
                     }
 
             }
