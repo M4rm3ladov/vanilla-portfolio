@@ -16,9 +16,10 @@
 @nav-hover-text-color: gray;
 
 /* colors */
-@primary-text-color: black;
-@secondary-text-color: rgb(85, 85, 85);
-@tertiary-text-color: white;
+@primary-color: black;
+@secondary-color: white;
+@complementary-color: rgb(85, 85, 85);
+@complementary-color-dark: rgb(53, 53, 53);
 
 @desktop-scroll-transition: all 300ms ease;
 @mobile-scroll-transition: all 0.3 ease-in-out;
@@ -46,7 +47,7 @@ html {
         }
 
         p {
-            color: @secondary-text-color;
+            color: @complementary-color;
         }
         
         .container {
@@ -71,8 +72,8 @@ html {
 
                     a {
                         text-decoration: none;
-                        color: @primary-text-color;
-                        text-decoration-color: @tertiary-text-color;
+                        color: @primary-color;
+                        text-decoration-color: secondary-color;
 
                         &:hover {
                             color: @nav-hover-text-color;
@@ -143,7 +144,7 @@ html {
                                 padding: 10px;
                                 text-align: center;
                                 font-size: @nav-font-size;
-                                color: @primary-text-color;
+                                color: @primary-color;
                                 text-decoration: none;
                                 transition: @mobile-scroll-transition;
                             }
@@ -158,6 +159,7 @@ html {
 
             .logo {
                 font-size: @logo-font-size;
+                font-weight: 400;
                 
                 img{
                     width: auto;
@@ -169,6 +171,7 @@ html {
             section {
                     .section-mixin();
 
+                    // Hero
                     .section-socials, 
                     &#profile {
                         display: flex;
@@ -181,27 +184,8 @@ html {
                         height: 80vh;
                     }
                     
-                    .section-text {
-                        
-                        p {
-                            font-weight: 600;
-
-                            &:nth-of-type(1) {
-                                text-align: center;
-                            }
-
-                            &:nth-of-type(2) {
-                                font-size: 1.7rem;
-                                margin-bottom: 20px;
-                            }
-                        }
-
-                        h1 {
-                            font-size: 3rem;
-                            text-align: center;
-                            line-height: 1rem;
-                        }
-
+                    .section-text {        
+                    
                         .btn-container {
                             display: flex;
                             justify-content: center;
@@ -215,9 +199,32 @@ html {
                         margin-top: 1rem;
                         gap: 1rem;
 
-                        .icon {
-                            cursor: pointer;
-                            height: 2rem;
+                    }
+
+                    // About
+                    &#about {
+                        position: relative;
+
+                        .section-about-container {
+                            display: flex;
+                            align-items: center;
+                            gap: 2.5rem;
+                            margin-top: 3rem;
+                        }
+
+                        .section-pic-container img {
+                            border-radius: 10%;
+                        }
+
+                        p {
+                            //margin-top: 15px;
+                            align-self: start;
+                        }
+
+                        & .arrow{
+                            position: absolute;
+                            right: -5rem;
+                            bottom: 2.5rem;
                         }
                     }
 
@@ -225,10 +232,38 @@ html {
                         width: auto;
                         height: 320px;
                         margin: auto 0;
-                        border: 2px solid black;
+                        border: 2px solid @complementary-color-dark;
                         border-radius: 50%;
                     }
 
+            }
+
+            h1 {
+                margin: 1.2rem;
+                font-size: 3rem;
+                text-align: center;
+            }
+
+            h2 {
+                color: @complementary-color;
+                text-align: center;
+                font-size: 1.7rem;
+                margin-bottom: 20px;
+            }
+
+            h3 {
+                color: @complementary-color;
+                text-align: center;
+                font-weight: 400;
+            }
+
+            p {
+                text-align: left;
+            }
+            
+            .icon {
+                cursor: pointer;
+                height: 2rem;
             }
 
             .btn {
@@ -241,7 +276,7 @@ html {
 
             .btn-color-1, 
             .btn-color-2 {
-                border: rgb(53, 53, 53) 0.1rem solid;
+                border: @complementary-color-dark 0.1rem solid;
             }
             
             .btn-color-1:hover, 
@@ -251,18 +286,18 @@ html {
 
             .btn-color-1,
             .btn-color-1:hover {
-                background: rgb(53, 53, 53);
-                color: white;
+                background: @complementary-color-dark;
+                color: @secondary-color;
             }
 
             .btn-color-1:hover {
-                background: rgb(0, 0, 0);    
+                background: @primary-color;
             }
 
             .btn-color-2:hover {
-                background: rgb(0, 0, 0);
-                color: white;
-                border: rgb(255, 255, 255) 0.1rem solid;
+                background: @primary-color;
+                color: @secondary-color;
+                border: @secondary-color 0.1rem solid;
             }
 
             .btn-color-2 {
