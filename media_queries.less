@@ -1,4 +1,4 @@
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: 1024px) {
     html {
         body {
             .container {
@@ -11,9 +11,50 @@
                     justify-content: space-between;
                     align-items: center;
                 }
+
+                section {
+                    height: fit-content;
+
+                    &#profile {
+
+                        .content-container {
+                            flex-direction: column;
+                            margin-top: 18vh;
+
+                            .section-text {
+                                order: 2;
+                            }
+
+                            .section-pic-container img {
+                                order: 1;
+                            }
+                        }
+                        
+                    }
+
+                    .arrow {
+                        display: none;
+                    }
+                }
             }
         } 
     }
 }
+
+
+@media screen and (min-width: 1500px) {
+    html {
+        body {
+            .container {
+                section {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                }
+            }
+        }
+    }
+}
+
 
     

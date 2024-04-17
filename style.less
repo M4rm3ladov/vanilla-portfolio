@@ -1,4 +1,3 @@
-
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 @container-padding: 0 50px;
@@ -41,29 +40,32 @@ html {
     body {
         font-family: "Poppins", sans-serif;
 
-        a, .btn {
+        a,
+        .btn {
             transition: @desktop-scroll-transition;
         }
 
         p {
             color: @complementary-color;
         }
-        
+
         .container {
             //max-width: @container-max-width;
             margin: 0 auto;
             //padding: @container-padding;
 
             #desktop-nav {
-                padding: 0 10rem;
+                max-width: 1000px;
                 height: @nav-height;
+                margin: 0 auto;
                 align-items: center;
                 justify-content: space-between;
-            
-                &, .nav-links {
+
+                &,
+                .nav-links {
                     display: flex;
                 }
-                
+
                 .nav-links {
                     list-style-type: none;
                     gap: @nav-link-gap;
@@ -117,7 +119,7 @@ html {
 
 
                         &.open span:nth-child(2) {
-                           opacity: 0;
+                            opacity: 0;
                         }
 
                         &.open span:last-child {
@@ -134,7 +136,7 @@ html {
                         max-height: 0;
                         overflow: hidden;
                         transition: @mobile-scroll-transition;
-                    
+
                         li {
                             list-style: none;
 
@@ -159,156 +161,201 @@ html {
             .logo {
                 font-size: @logo-font-size;
                 font-weight: 400;
-                
-                img{
+
+                img {
                     width: auto;
                     height: @logo-height;
-                    vertical-align: middle; 
+                    vertical-align: middle;
                 }
             }
 
             section {
-                    .section-mixin();
 
-                    // Hero
-                    .section-socials, 
-                    &#profile {
+                .content-container {
+                    display: flex;
+                    max-width: 1500px;
+                    margin: 0 auto;
+                    justify-content: center;
+                    position: relative;
+                }
+
+                .section-mixin();
+
+                // Hero
+                .section-socials,
+                &#profile {
+                    display: flex;
+                }
+
+                &#profile {
+                    height: 85.5vh;
+                    padding-top: 0;
+                    justify-content: center;
+                    align-items: center;
+                    gap: 5rem;
+                }
+
+                .section-text {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+
+                    .btn-container {
                         display: flex;
-                    }
-
-                    &#profile {
-                        height: 85.5vh;
-                        padding-top: 0;
                         justify-content: center;
-                        align-items: center;
-                        gap: 5rem;
-                    }
-                    
-                    .section-text {        
-                    
-                        .btn-container {
-                            display: flex;
-                            justify-content: center;
-                            gap: 1rem;
-                        }
-                    }
-
-                    .section-socials {
-                        display: flex;
-                        justify-content: center;
-                        margin-top: 1.5rem;
                         gap: 1rem;
-
                     }
+                }
 
-                    // About
-                    &#about {
-                        background-color: #0F0F0F;
-                        position: relative;
+                .section-socials {
+                    display: flex;
+                    justify-content: center;
+                    margin-top: 1.5rem;
+                    gap: 1rem;
 
-                        .section-about-container {
-                            display: flex;
-                            align-items: center;
-                            gap: 2.5rem;
-                            margin-top: 3rem;
-                            padding: 0 5rem;
-                        }
+                }
 
-                        .section-pic-container img {
-                            border-radius: 10%;
-                            margin-left: 3rem;
-                            width: auto;
-                            height: 350px; 
-                        }
+                // About
+                &#about {
+                    background-color: #0F0F0F;
 
-                        h1, h3, p {
-                            color: @secondary-color;
-                        } 
-
-                        p {
-                            margin: 0 2.5rem;
-                            align-self: start;
-                            line-height: 1.8rem;
-                        }
-
-                    }
-
-                    // Technology
-                    &#technology {
-                        position: relative;
-
-                        .section-tech-container {
-                            display: grid;
-                            grid-template-columns: repeat(6, 1fr);
-                       
-                            row-gap: 4rem;
-                            margin-top: 2.5rem;
- 
-                            img {
-                                justify-self: center;
-                                cursor: pointer;
-                                height: 3rem;   
-                            }
-                        }
-                    }
-
-                    // Projects
-                    &#projects {
-                        position: relative;
-                        background-color: #0F0F0F;
-                        padding-left: 5rem;
-                        padding-right: 5rem;
-
-                        h1, h3 {
-                            color: @secondary-color;
-                        }
-
-                        .section-project-container {
-                            display: flex;
-                            justify-content: space-between;
-
-                            .section-details-container {
-
-                                article {
-                                    background-color: @secondary-color;
-                                    display: flex;
-                                    flex-direction: column;
-                                    border: 2px solid @complementary-color-dark;
-                                    border-radius: 1rem;
-                                    align-items: center;
-                                    width: fit-content;
-                                    padding: 1rem;
-    
-                                    img {
-                                        width: 340px;
-                                        height: 180px;
-                                        border-radius: .5rem;
-                                        margin-bottom: 1rem;
-                                    }
-                                }
-                            }
-                        }
-                        
+                    .section-about-container {
+                        display: flex;
+                        align-items: center;
+                        gap: 2.5rem;
+                        margin-top: 3rem;
+                        padding: 0 5rem;
                     }
 
                     .section-pic-container img {
+                        border-radius: 10%;
+                        margin-left: 3rem;
                         width: auto;
-                        height: 320px;
-                        margin: auto 0;
-                        border: 2px solid @complementary-color-dark;
-                        border-radius: 50%;
+                        height: 350px;
                     }
 
-                    .arrow{
-                        position: absolute;
-                        right: 2rem;
-                        bottom: 2.5rem;
+                    h1,
+                    h3,
+                    p {
+                        color: @secondary-color;
                     }
 
+                    p {
+                        margin: 0 2.5rem;
+                        align-self: start;
+                        line-height: 2rem;
+                    }
+
+                }
+
+                // Technology
+                &#technology {
+
+                    .section-tech-container {
+                        display: grid;
+                        grid-template-columns: repeat(6, 1fr);
+
+                        column-gap: 7rem;
+                        row-gap: 4rem;
+                        margin-top: 2.5rem;
+
+                        img {
+                            justify-self: center;
+                            cursor: pointer;
+                            height: 3rem;
+                        }
+                    }
+                }
+
+                // Projects
+                &#projects {
+
+                    background-color: #0F0F0F;
+
+                    h1,
+                    h3 {
+                        color: @secondary-color;
+                    }
+
+                    .section-project-container {
+                        display: grid;
+                        grid-template-columns: repeat(3, 1fr);
+                        gap: 3rem;
+
+                        .section-details-container {
+
+                            article {
+                                background-color: @secondary-color;
+                                display: flex;
+                                flex-direction: column;
+                                border: 2px solid @complementary-color-dark;
+                                border-radius: 1rem;
+                                align-items: center;
+                                width: fit-content;
+                                padding: 1rem;
+
+                                img {
+                                    width: 280px;
+                                    height: 260px;
+                                    border-radius: .5rem;
+                                    margin-bottom: 1rem;
+                                }
+                            }
+                        }
+                    }
+
+                }
+
+                // Contact
+                &#contact {
+                    .section-contact-container {
+                        form {
+
+                            input,
+                            textarea {
+                                display: block;
+                            }
+
+                            input,
+                            textarea {
+                                margin: 12px 0;
+                                border-radius: 5px;
+                                border: 1px solid @complementary-color-dark;
+                                width: 300px;
+                                padding: 5px;
+                            }
+
+                            input {
+                                height: 20px;
+                            }
+                        }
+                    }
+                }
+
+                .section-pic-container img {
+                    width: auto;
+                    height: 320px;
+                    margin: auto 0;
+                    border: 2px solid @complementary-color-dark;
+                    border-radius: 50%;
+                }
+
+                .arrow {
+                    position: absolute;
+                    right: 2rem;
+                    bottom: -5rem;
+                }
+
+            }
+
+            footer {
+                display: flex;
+                justify-content: center;
             }
 
             h1 {
                 margin: 1.2rem;
+                margin-bottom: 0;
                 font-size: 3rem;
                 text-align: center;
             }
@@ -329,7 +376,7 @@ html {
             p {
                 text-align: left;
             }
-            
+
             .icon {
                 cursor: pointer;
                 height: 2rem;
@@ -343,12 +390,12 @@ html {
                 border-radius: 2rem;
             }
 
-            .btn-color-1, 
+            .btn-color-1,
             .btn-color-2 {
                 border: @complementary-color-dark 0.1rem solid;
             }
-            
-            .btn-color-1:hover, 
+
+            .btn-color-1:hover,
             .btn-color-2:hover {
                 cursor: pointer;
             }
@@ -372,12 +419,10 @@ html {
             .btn-color-2 {
                 background: none;
             }
-        }  
+
+
+        }
     }
 
-    
+
 }
-
-
-
-
